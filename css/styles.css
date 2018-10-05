@@ -1,4 +1,16 @@
 h1 {
   text-align: center;
-  
+  background-color: #BA4545;
+
+}
+img {
+  float: right;
+  border-style: bold;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+h2 {
+  border-radius: 40px;
 }
