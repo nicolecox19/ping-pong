@@ -1,6 +1,6 @@
 //buisness logic
-
-
+$(document).ready(function() {
+});
 
 
 
