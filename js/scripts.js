@@ -1,27 +1,31 @@
+// business logic
+function list(num){
+  if (num%15===0){
+		return "<li>"+"pingpong"+"</li>";
+  }
+	else if(num%3===0){
+		return "<li>"+"ping"+"</li>";
+  }
+	else if(num%5===0){
+		return "<li>"+"pong"+"</li>";
+  }
+	else{
+		return "<li>"+num+"</li>";
+  }
+};
+
+// user logic
 $(document).ready(function(){
-  $("#blanks").submit(function(event){
+  $("#blanks form").submit(function(event) {
     event.preventDefault();
-    var userInput = parseInt($("#user").val());
-    var numbers = [];
-    for (var i = 1; i <= userInput; i++) {
-      numbers.push(i);
-    }
-
-    var outputs = numbers.map(function(number){
-    	if (number % 3 === 0 && number % 5 === 0) {
-      	return number = "ping-pong"
-      } else if (number % 3 === 0) {
-      	return number = "Ping";
-      } else if (number % 5 === 0) {
-      	return number = "Pong";
-      } else {
-      	return number;
+    var numberInput = parseInt($("input#numInput").val());
+    if (isNaN(numberInput)){
+      alert("Please enter a number");
+    } else {
+      $("ul#answers").children("li").remove();
+      for(var i=1; i<=numberInput; i++){
+      $("#answers").append(list(i));
       }
-    });
-
-    outputs.forEach(function(output){
-      $("ul").append("<li>" + output + "</li>");
-    });
-
+    };
   });
 });
